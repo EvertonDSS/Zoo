@@ -20,7 +20,5 @@ export class AnimalCadastroComponent {
     this.animalService.create(animal).subscribe(response => {
       this.router.navigate(['/animais']);
     });
-    // Aqui você pode adicionar a lógica para salvar o animal, como enviar para um serviço ou API.
-
   }
 }

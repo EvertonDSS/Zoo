@@ -9,9 +9,19 @@ import { Animal } from '../../models/animal';
 })
 export class AnimalService {
 
+
   private api = environment.urlApi;
 
   constructor(private httpClient: HttpClient) { }
+
+  adicionarCuidadoAoAnimal(idAnimal: number, idCuidado: number): Observable<Animal> {
+    return this.httpClient.post<Animal>(`${this.api}/Animais/${idAnimal}/Cuidado/${idCuidado}`, {});
+  }
+
+  removerCuidadoAoAnimal(idAnimal: number, idCuidado: number): Observable<Animal> {
+    return this.httpClient.delete<Animal>(`${this.api}/Animais/${idAnimal}/Cuidado/${idCuidado}`, {});
+  }
+
 
   getAll(): Observable<Animal[]> {
     return this.httpClient.get<Animal[]>(`${this.api}/Animais`);
