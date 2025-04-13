@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <h1>Lista de Animais</h1>
+  <button class="btn btn-success w-25 mx-2" [routerLink]="['/animal/cadastro']">Adicionar animal</button>
+  <button class="btn btn-primary w-25 mx-2" [routerLink]="['/cuidados']">Listar Cuidados</button>
+
+  <table class="table table-hover table-bordered mt-5">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Especie</th>
+        <th>Habitat</th>
+        <th>Pais Origem</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      @if(animais.length > 0){
+      @for(animal of animais; track $index){
+      <tr>
+        <td>{{animal.id}}</td>
+        <td>{{animal.nome}}</td>
+        <td>{{animal.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+        <td>{{animal.especie}}</td>
+        <td>{{animal.habitat}}</td>
+        <td>{{animal.paisOrigem}}</td>
+        <td>
+          <button class="btn btn-warning mx-2" [routerLink]="['/animal/editar', animal.id]">Editar</button>
+          <button class="btn btn-info mx-2" [routerLink]="['/animal/detalhes', animal.id]">Detalhes</button>
+          <button class="btn btn-danger mx-2" (click)="deletar(animal.id)">Excluir</button>
+        </td>
+      </tr>
+      }
+
+      }@else{
+      <tr>
+        <td colspan="7" class="text-center">Nenhum animal encontrado</td>
+      </tr>
+      }
+
+    </tbody>
+  </table>
+</div>
