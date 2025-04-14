@@ -79,9 +79,16 @@ Este projeto é uma aplicação web para gerenciar animais e seus cuidados em um
 - Modelagem de banco com **relacionamento muitos-para-muitos** entre Animais e Cuidados
 - Uso do **SQL Server** com entidades relacionadas e mapeamento por Entity Framework Core
 
+
+
 ---
 
 ## 📌 Observações
 
 - Ainda faltam algumas validações no frontend
 - Falta de apresentação de mensagens de erros no front, apesar de estar corretamente retornando da api
+
+# Maiores Dificuldades
+- A utilização de uma implementação um pouco diferente do formato que normalmente estruturo meus projetos no back, com melhor separação entre as camadas
+- Pouca familiriade prática com o Angular o que ocasionou em erros de utilização de Enum e exibição de mensagens
+- Falta de tempo para finalização completa do front, com maior estruturação do back
